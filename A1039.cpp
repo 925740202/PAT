@@ -8,7 +8,7 @@ using namespace std;
 const int N=40000;
 const int M=26*26*26*10+1;
 vector<int> SelectCourse[M];
-int getID(char name[])                       //hash º¯Êı½«Ãû×Ö×ª»»ÎªÕûÊı
+int getID(char name[])                       //hash å‡½æ•°å°†åå­—è½¬æ¢ä¸ºæ•´æ•°
 {
     int id=0;
     for(int i=0;i<3;i++)
@@ -23,26 +23,26 @@ int main()
     int n,k;
     char name[5];
     int id;
-    scanf("%d%d",&n,&k);                  //ÊäÈë²éÑ¯ÈËÊıNºÍ¿Î³Ì×ÜÊıK
+    scanf("%d%d",&n,&k);                  //è¾“å…¥æŸ¥è¯¢äººæ•°Nå’Œè¯¾ç¨‹æ€»æ•°K
     for(int i=0;i<5;i++)
     {
         int course,x;
-        scanf("%d%d",&course,&x);           //ÊäÈë¿Î³ÌºÅºÍÑ¡Ôñ¿Î³Ì×ÜÈËÊı
+        scanf("%d%d",&course,&x);           //è¾“å…¥è¯¾ç¨‹å·å’Œé€‰æ‹©è¯¾ç¨‹æ€»äººæ•°
         for(int j=0;j<x;j++)
         {
-            scanf("%s",name);               //ÊäÈëÑ¡Ôñ¸Ã¿Î³ÌÈËµÄID
-            id=getID(name);              //½«ÆäID×ª»»ÎªÕûÊı
-            SelectCourse[id].push_back(course);    //½«¸ÃÈËËùÑ¡¿Î³Ì·ÅÈëSelectCourseÈİÆ÷
+            scanf("%s",name);               //è¾“å…¥é€‰æ‹©è¯¥è¯¾ç¨‹äººçš„ID
+            id=getID(name);              //å°†å…¶IDè½¬æ¢ä¸ºæ•´æ•°
+            SelectCourse[id].push_back(course);    //å°†è¯¥äººæ‰€é€‰è¯¾ç¨‹æ”¾å…¥SelectCourseå®¹å™¨
         }
     }
    // vector<int> nid;
     for(int i=0;i<n;i++)
     {
-       scanf("%s",name);                           //ÊäÈë±»²éÑ¯ÈËµÄID
+       scanf("%s",name);                           //è¾“å…¥è¢«æŸ¥è¯¢äººçš„ID
        id=getID(name);
        printf("%s %d",name,SelectCourse[id].size());
      //  nid.push_back(id);
-       sort(SelectCourse[id].begin(),SelectCourse[id].end());    //½«¿Î³ÌºÅ´ÓĞ¡µ½´óÅÅĞò
+       sort(SelectCourse[id].begin(),SelectCourse[id].end());    //å°†è¯¾ç¨‹å·ä»å°åˆ°å¤§æ’åº
        for(int j=0;j<SelectCourse[id].size();j++)
        {
            printf(" %d",SelectCourse[id][j]);
